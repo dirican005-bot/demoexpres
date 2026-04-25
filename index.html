@@ -2397,9 +2397,9 @@ function dpLoadJsonSync(url){
 }
 function dpLoadExternalData(){
   try{
-    REAL_CARILER = dpLoadJsonSync('cariler.json'); window.REAL_CARILER = REAL_CARILER;
-    REAL_VARDIYA_SATISLARI = dpLoadJsonSync('satislar.json'); window.REAL_VARDIYA_SATISLARI = REAL_VARDIYA_SATISLARI;
-    REAL_TAHSILATLAR = dpLoadJsonSync('tahsilatlar.json'); window.REAL_TAHSILATLAR = REAL_TAHSILATLAR;
+    REAL_CARILER = dpLoadJsonSync('api/cariler.json'); window.REAL_CARILER = REAL_CARILER;
+    REAL_VARDIYA_SATISLARI = dpLoadJsonSync('api/satislar.json'); window.REAL_VARDIYA_SATISLARI = REAL_VARDIYA_SATISLARI;
+    REAL_TAHSILATLAR = dpLoadJsonSync('api/tahsilatlar.json'); window.REAL_TAHSILATLAR = REAL_TAHSILATLAR;
     if (Array.isArray(REAL_TAHSILATLAR)) {
       REAL_TAHSILATLAR.sort(function(a,b){
         function t(x){ var v=String((x&&(x.tarih||x.TARIH))||'').trim(); var p=v.split(/[.\/-]/).map(Number); if(p.length>=3){return new Date(p[2],p[1]-1,p[0]).getTime()||0;} return Date.parse(v)||0; }
